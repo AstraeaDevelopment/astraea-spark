@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "io.github.astraea.spark.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+    "MinecraftClientAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": [
+    "EntityTypeAccessor",
+    "GameRuleManagerAccessor",
+    "GameRuleValueMixin"
+  ]
+}

@@ -1,28 +1,34 @@
 {
   "schemaVersion": 1,
-  "id": "template-mod",
+  "id": "astraea-spark",
+  "provides": [
+    "spark"
+  ],
   "version": "${version}",
-  "name": "Template Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Astraea Spark",
+  "description": " A Legacy Fabric 1.8.9 adapter for the Spark performance profiler.",
   "authors": [
-    "Me!"
+    "Crosby"
   ],
   "contact": {
-    "homepage": "https://legacyfabric.net/",
-    "sources": "https://github.com/AstraeaDevelopment/legacy-fabric-template-mod",
-    "issues": "https://github.com/AstraeaDevelopment/legacy-fabric-template-mod/issues"
+    "sources": "https://github.com/AstraeaDevelopment/astraea-spark",
+    "issues": "https://github.com/AstraeaDevelopment/astraea-spark/issues"
   },
-  "license": "CC0-1.0",
-  "icon": "assets/template/icon.png",
+  "license": "GPL-3.0-or-later",
+  "icon": "assets/astraea-spark/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.example.template.TemplateMod"
+      "io.github.astraea.spark.LegacyFabricSparkMod"
+    ],
+    "client": [
+      "io.github.astraea.spark.LegacyFabricSparkMod::initializeClient"
     ]
   },
   "mixins": [
-    "template-mod.mixins.json"
+    "astraea-spark.mixins.json"
   ],
+  "accessWidener": "astraea-spark.accesswidener",
   "depends": {
     "fabricloader": ">=0.14.19",
     "minecraft": "1.8.9"

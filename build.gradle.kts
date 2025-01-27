@@ -10,6 +10,10 @@ base {
 }
 
 repositories {
+	maven {
+		name = "Lucko Maven"
+		url = uri("https://nexus.lucko.me/repository/maven-snapshots/")
+	}
 	// Add repositories to retrieve artifacts from in here.
 	// You should only use this when depending on other mods because
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
@@ -40,8 +44,14 @@ dependencies {
 	// As of September 2024, available only for intermediary generation 1.
 	modImplementation("net.legacyfabric.legacy-fabric-api:legacy-fabric-api:${properties["fabric_version"] as String}")
 
+	implementation("me.lucko:spark-common:1.10.119-SNAPSHOT")
+
 	// You can retrieve a specific api module using this notation.
 	// modImplementation(legacy.apiModule("legacy-fabric-item-groups-v1", properties["fabric_version"] as String))
+}
+
+loom {
+	accessWidenerPath = file("src/main/resources/astraea-spark.accesswidener")
 }
 
 tasks {
